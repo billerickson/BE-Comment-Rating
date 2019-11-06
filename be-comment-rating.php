@@ -52,8 +52,6 @@
 			add_action( 'unspammed_comment', [ self::$instance, 'update_comment_rating_on_change' ] );
 			add_action( 'comment_unapproved_', [ self::$instance, 'update_comment_rating_on_change' ] );
 			add_action( 'comment_approved_', [ self::$instance, 'update_comment_rating_on_change' ] );
-
-			add_action( 'wp_head', function() { ea_pp( get_post_meta( get_the_ID() ) ); });
   		}
  		return self::$instance;
  	}
