@@ -41,8 +41,7 @@ WP Recipe Maker includes its own comment rating field, but it depends upon JavaS
 
 You can use BE Comment Rating to enable WPRM star ratings on AMP endpoints. Add the following to your theme's functions.php file:
 
-```
-
+```php
 /**
  * When to use BE Comment Rating
  * Only use it for AMP endpoints, and when the current post has a recipe
