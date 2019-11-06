@@ -14,8 +14,7 @@
    margin-bottom: 1em;
  }
  /* the stars */
- .be-comment-rating > label,
- .entry-comments .comment-respond .be-comment-rating label {
+ .be-comment-rating > label {
    display: inline-block;
    position: relative;
    margin: 0;
@@ -48,7 +47,4 @@
    z-index: 2;  /* bring the button above the stars so it captures touches/clicks */
    opacity: 0;  /* comment to see where the radio buttons are */
    font-size: initial; /* reset to default */
- }
- form.amp-form-submit-error [submit-error] {
-   color: red;
  }
