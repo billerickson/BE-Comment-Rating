@@ -1,6 +1,6 @@
 # BE Comment Rating
 
-Star rating field for comments that's lean, uses no JavaScript, and is AMP-compatible.
+This wordPress plugin adds a star rating field for comments that's lean, uses **no JavaScript**, and is AMP-compatible. This 100% CSS approach was inspired by the [AMP documentation](https://amp.dev/documentation/examples/interactivity-dynamic-content/star_rating/).
 
 You can also use this plugin to add AMP compatibility to an existing rating plugin that uses JavaScript. See the [WP Recipe Maker](#wp-recipe-maker) section below.
 
