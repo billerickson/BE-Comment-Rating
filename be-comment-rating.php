@@ -99,6 +99,10 @@
 	 *
 	 */
 	public function add_stars_to_comment( $text, $comment = null ) {
+		$display = apply_filters( 'be_comment_rating_display', true );
+		if( ! $display )
+			return $text;
+
 		if ( null !== $comment ) {
 			$rating = $this->get_rating_for( $comment->comment_ID );
 
