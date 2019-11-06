@@ -4,7 +4,7 @@ Star rating field for comments that's lean, uses no JavaScript, and is AMP-compa
 
 You can also use this plugin to add AMP compatibility to an existing rating plugin that uses JavaScript. See the [WP Recipe Maker](#wp-recipe-maker) section below.
 
-![screenshot](https://p198.p4.n0.cdn.getcloudapp.com/items/NQuepDrA/sample-form.jpg?v=3fe43199283a07b3a6dd38c984cc9b37 | width=425)
+![screenshot](https://p198.p4.n0.cdn.getcloudapp.com/items/mXu7GBQA/sample-form.jpg?v=6fc32bfa9b5eee6252660586136fd9c7)
 
 ## Filters
 
