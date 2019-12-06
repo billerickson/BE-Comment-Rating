@@ -60,6 +60,16 @@ class BE_Comment_Rating {
 			add_action( 'unspammed_comment', [ self::$instance, 'update_comment_rating_on_change' ] );
 			add_action( 'comment_unapproved_', [ self::$instance, 'update_comment_rating_on_change' ] );
 			add_action( 'comment_approved_', [ self::$instance, 'update_comment_rating_on_change' ] );
+
+			// Schema
+			add_action( 'init', function() {
+				$schema_pieces = apply_filters( 'be_comment_rating_schema_pieces', [ 'article' ] );
+				foreach( $schema_pieces as $piece ) {
+					add_filter( 'wpseo_schema_' . $piece, [ self::$instance, 'aggregate_rating_schema' ] );
+				}
+
+			}, 20 );
+
 		}
 
 		return self::$instance;
@@ -346,6 +356,23 @@ class BE_Comment_Rating {
 		update_post_meta( $post_id, $this->meta_key, $post_rating );
 		update_post_meta( $post_id, $this->meta_key . '_average', $post_rating['average'] );
 	}
+
+	/**
+	 * Aggregate Rating Schema
+	 *
+	 */
+	function aggregate_rating_schema( $data ) {
+		$rating = get_post_meta( get_the_ID(), 'be_comment_rating', true );
+		if( !empty( $rating ) && !empty( $rating['average'] ) ) {
+			$data['aggregateRating'] = [
+				'@type'			=> 'AggregateRating',
+				'ratingValue'	=> $rating['average'],
+				'reviewCount'	=> $rating['count']
+			];
+		}
+		return $data;
+	}
+
 }
 
 /**
